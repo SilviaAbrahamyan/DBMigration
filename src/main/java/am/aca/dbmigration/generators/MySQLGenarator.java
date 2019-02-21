@@ -4,8 +4,16 @@ import am.aca.dbmigration.sql.Schema;
 import am.aca.dbmigration.sql.generatedSQLs.*;
 import am.aca.dbmigration.sql.tables.MySQLTable;
 
+//TODO
+/**
+ * MySQL type Genarator
+ */
 public class MySQLGenarator implements Generator<MySQLTable> {
 
+    /**
+     * @see Generator#generateSQLOf(Schema)
+     * @param schema Destination database type schema
+     */
     @Override
     public void generateSQLOf(Schema<MySQLTable> schema) {
 

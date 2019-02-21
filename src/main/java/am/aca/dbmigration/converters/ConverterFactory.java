@@ -10,7 +10,7 @@ public class ConverterFactory {
      *
      * @param urlFrom  of the source database
      * @param urlTo  of the destination database
-     * @return
+     * @return Specific type Converter based on destination database type
      */
     public static Converter getConverter(String urlFrom, String urlTo) {
 

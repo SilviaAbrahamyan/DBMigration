@@ -6,8 +6,16 @@ import am.aca.dbmigration.sql.generatedSQLs.*;
 import am.aca.dbmigration.sql.tables.PostgreSQLTable;
 import com.sun.javafx.iio.gif.GIFDescriptor;
 
+//TODO
+/**
+ * PostgreSQL type Genarator
+ */
 public class PostgreSQLGenerator implements Generator<PostgreSQLTable> {
 
+    /**
+     * @see Generator#generateSQLOf(Schema)
+     * @param schema Destination database type schema
+     */
     @Override
     public void generateSQLOf(Schema<PostgreSQLTable> schema) {
 
