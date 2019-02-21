@@ -2,6 +2,11 @@ package am.aca.dbmigration.sql.columns;
 
 import am.aca.dbmigration.sql.utils.Nullable;
 
+//TODO
+
+/**
+ * It's hold information about mySQL column
+ */
 public class MySQLColumn {
 
     private String name;

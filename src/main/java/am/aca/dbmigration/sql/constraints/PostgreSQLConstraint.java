@@ -1,5 +1,11 @@
 package am.aca.dbmigration.sql.constraints;
 
+
+//TODO
+
+/**
+ * It's hold information about postgeSQL constraint
+ */
 public class PostgreSQLConstraint {
 
     private String name;

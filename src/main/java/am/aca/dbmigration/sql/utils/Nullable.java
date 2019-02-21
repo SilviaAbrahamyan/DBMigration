@@ -1,6 +1,13 @@
 package am.aca.dbmigration.sql.utils;
 
+
+//TODO
+
+/**
+ * Its decides column nullability.
+ */
 public enum Nullable {
+
     YES(""),
     NO("NOT NULL");
 

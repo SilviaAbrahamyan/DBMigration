@@ -2,6 +2,11 @@ package am.aca.dbmigration.sql.constraints;
 
 import java.util.Objects;
 
+//TODO
+
+/**
+ * It's hold information about mySQL constraint
+ */
 public class MySQLConstraint {
 
     private String name;

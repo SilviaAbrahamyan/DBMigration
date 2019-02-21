@@ -1,5 +1,6 @@
 package am.aca.dbmigration.sql.tables;
 
+//TODO
 import java.util.List;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -7,6 +8,12 @@ import java.util.stream.Collectors;
 import am.aca.dbmigration.sql.columns.MySQLColumn;
 import am.aca.dbmigration.sql.constraints.MySQLConstraint;
 
+//TODO
+
+/**
+ * MySQL type table
+ *
+ */
 public class MySQLTable implements Table{
 
     private String name;
@@ -25,6 +32,10 @@ public class MySQLTable implements Table{
     }
 
 
+    /**
+     * It's check specific table has primary kay constraint
+     * @return list of Primary Key MySQLConstraint
+     */
     public List<MySQLConstraint> getConstraintByPrimaryKey() {
         List<MySQLConstraint> constraintsByPK = new ArrayList<>();
         for (MySQLConstraint mySQLConstraint : constraints) {
@@ -36,6 +47,10 @@ public class MySQLTable implements Table{
         return constraintsByPK.stream().distinct().collect(Collectors.toList());
     }
 
+    /**
+     * It's check specific table has foreign kay constraint
+     * @return list of Foreign Key MySQLConstraint
+     */
     public List<MySQLConstraint> getConstraintByForeignKey() {
         List<MySQLConstraint> constraintsByFK = new ArrayList<>();
         for (MySQLConstraint mySQLConstraint : constraints) {
@@ -55,6 +70,10 @@ public class MySQLTable implements Table{
         this.constraints.add(constraint);
     }
 
+    /**
+     * @see Table#getColumns()
+     * @return MySql type list of columns
+     */
     @Override
     public List<MySQLColumn> getColumns() {
         return new ArrayList<>(columns);
@@ -72,6 +91,10 @@ public class MySQLTable implements Table{
         this.constraints = constraints;
     }
 
+    /**
+     * @see Table#getName()
+     * @return MySql type name
+     */
     @Override
     public String getName() {
         return name;
@@ -89,11 +112,19 @@ public class MySQLTable implements Table{
         this.type = type;
     }
 
+    /**
+     * @see Table#isEnabled()
+     * @return true of false
+     */
     @Override
     public boolean isEnabled() {
         return enabled;
     }
 
+    /**
+     * @see Table#setEnabled(boolean)
+     * @return
+     */
     @Override
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;

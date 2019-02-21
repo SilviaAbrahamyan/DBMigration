@@ -7,6 +7,12 @@ import java.util.stream.Collectors;
 import am.aca.dbmigration.sql.columns.PostgreSQLColumn;
 import am.aca.dbmigration.sql.constraints.PostgreSQLConstraint;
 
+//TODO
+
+/**
+ * PosgteSQL type table
+ *
+ */
 public class PostgreSQLTable implements Table{
 
     private String name;
@@ -24,6 +30,10 @@ public class PostgreSQLTable implements Table{
     }
 
 
+    /**
+     * It's check specific table has primary kay constraint
+     * @return list of Primary Key PostgreSQLConstraint
+     */
     public List<PostgreSQLConstraint> getConstraintByPrimaryKey() {
         List<PostgreSQLConstraint> constraintsByPK = new ArrayList<>();
         for (PostgreSQLConstraint mySQLConstraint : constraints) {
@@ -35,6 +45,11 @@ public class PostgreSQLTable implements Table{
         return constraintsByPK.stream().distinct().collect(Collectors.toList());
     }
 
+
+    /**
+     * It's check specific table has foreign kay constraint
+     * @return list of Foreign Key PostgreSQLConstraint
+     */
     public List<PostgreSQLConstraint> getConstraintByForeignKey() {
         List<PostgreSQLConstraint> constraintsByFK = new ArrayList<>();
         for (PostgreSQLConstraint mySQLConstraint : constraints) {
@@ -53,6 +68,11 @@ public class PostgreSQLTable implements Table{
         this.constraints.add(constraint);
     }
 
+
+    /**
+     * @see Table#getColumns()
+     * @return MySql type list of columns
+     */
     @Override
     public List<PostgreSQLColumn> getColumns() {
         return new ArrayList<>(columns);
@@ -70,6 +90,10 @@ public class PostgreSQLTable implements Table{
         this.constraints = postgreSQLConstraints;
     }
 
+    /**
+     * @see Table#getName()
+     * @return MySql type name
+     */
     @Override
     public String getName() {
         return name;
@@ -87,11 +111,19 @@ public class PostgreSQLTable implements Table{
         this.type = type;
     }
 
+    /**
+     * @see Table#isEnabled()
+     * @return true of false
+     */
     @Override
     public boolean isEnabled() {
         return enabled;
     }
 
+    /**
+     * @see Table#setEnabled(boolean)
+     * @return
+     */
     @Override
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;

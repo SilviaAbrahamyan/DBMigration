@@ -2,6 +2,11 @@ package am.aca.dbmigration.sql;
 
 import am.aca.dbmigration.sql.tables.Table;
 
+//TODO
+
+/**
+ * This class will hold all inputs information by User
+ */
 public class MigrationData {
     public static String urlFrom;
     public static String usernameFrom;

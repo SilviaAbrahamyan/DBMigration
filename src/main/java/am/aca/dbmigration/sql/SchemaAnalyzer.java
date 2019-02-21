@@ -10,9 +10,22 @@ import am.aca.dbmigration.analyzers.DDLAnalyzerFactory;
 import am.aca.dbmigration.dataMigrator.DataMigratorFactory;
 import am.aca.dbmigration.sql.generatedSQLs.UnsupportedFeatures;
 
+//TODO
+
+/**
+ * This class based on inputs generating schemas
+ */
 public class SchemaAnalyzer {
 
-
+    /**
+     * It takes the source JDBC information and analyzing.
+     *
+     * @param urlFrom of the source database
+     * @param usernameFrom of the source database
+     * @param passwordFrom of the source database
+     * @return Specific type list of tables based on source database information
+     * @throws SQLException
+     */
     public static List<? extends Table> getSchema(String urlFrom, String usernameFrom, String passwordFrom) throws SQLException {
         MigrationData.schemaFrom = DDLAnalyzerFactory.
                 getAnalyzer(urlFrom, usernameFrom, passwordFrom)
@@ -22,6 +35,12 @@ public class SchemaAnalyzer {
 
     }
 
+
+    /**
+     * Corresponding tables sets true which User wants to transfer from source database to destination database
+     *
+     * @param enabledTableNames is table name selected by user
+     */
     public static void setEnabled(String enabledTableNames) {
 
         String[] enabledTables = enabledTableNames.split(",");
@@ -35,6 +54,13 @@ public class SchemaAnalyzer {
         }
     }
 
+    /**
+     * Based on source and destination JDBC information converts schemas
+     * and generates all sql quarries
+     *
+     * @return all warnings when appear during sql query generating
+     * @throws SQLException
+     */
     public static List<String> generateSqls() throws SQLException {
 
         MigrationData.schemaTo =

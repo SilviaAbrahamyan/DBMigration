@@ -3,6 +3,13 @@ package am.aca.dbmigration.sql.utils;
 import java.util.List;
 import java.util.ArrayList;
 
+
+//TODO
+
+/**
+ *  It's responsible converts  from source databasetable's data type
+ *  to destination database table's data type
+ */
 public enum Type {
 
     INT("INT", "INT"),

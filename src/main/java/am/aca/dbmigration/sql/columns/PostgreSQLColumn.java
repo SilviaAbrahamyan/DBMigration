@@ -2,6 +2,11 @@ package am.aca.dbmigration.sql.columns;
 
 import am.aca.dbmigration.sql.utils.Nullable;
 
+//TODO
+
+/**
+ * It's hold information about postgeSQL column
+ */
 public class PostgreSQLColumn {
 
 
