@@ -9,7 +9,19 @@ import am.aca.dbmigration.sql.columns.PostgreSQLColumn;
 import am.aca.dbmigration.sql.constraints.MySQLConstraint;
 import am.aca.dbmigration.sql.constraints.PostgreSQLConstraint;
 
+//TODO
+/**
+ *  Converter from MySQL to PostgreSQL
+ */
 public class MySQLToPostgreSql implements Converter<MySQLTable, PostgreSQLTable> {
+
+    /**
+     * This function takes @param and by using foreach loop
+     * get all information from @param and set in destination schema type
+     * @see Converter#convert(Schema)
+     * @param schemaFrom is MySQL database type schema
+     * @return PostgreSQL database type schema
+     */
     @Override
     public Schema<PostgreSQLTable> convert(Schema<MySQLTable> schemaFrom) {
         Schema<PostgreSQLTable> schemaTo = new Schema<>();

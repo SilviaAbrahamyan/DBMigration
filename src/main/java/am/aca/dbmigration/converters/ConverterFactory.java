@@ -2,8 +2,16 @@ package am.aca.dbmigration.converters;
 
 import am.aca.dbmigration.sql.utils.JdbcUrlHelper;
 
+//TODO
 public class ConverterFactory {
 
+    /**
+     * It takes the JDBC url extracts the database type and specifies the Converter
+     *
+     * @param urlFrom  of the source database
+     * @param urlTo  of the destination database
+     * @return
+     */
     public static Converter getConverter(String urlFrom, String urlTo) {
 
         String from = JdbcUrlHelper.getDbType(urlFrom);
