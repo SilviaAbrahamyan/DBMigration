@@ -7,6 +7,13 @@ import am.aca.dbmigration.sql.Schema;
 import am.aca.dbmigration.sql.tables.Table;
 import am.aca.dbmigration.sql.generatedSQLs.GeneratedInsertSQLs;
 
+//TODO
+
+/**
+ * It's responsible to fill and generate all quarries.
+ *
+ * @param <T> Destination database type
+ */
 public class DataMigrator<T> {
 
     private String urlFrom;
@@ -20,6 +27,13 @@ public class DataMigrator<T> {
         this.passwordFrom = passwordFrom;
     }
 
+    /**
+     * This function based on schemaFrom understood which class need to transfer.
+     * After that selects all data from tables and save in list then based on
+     * list generated all insert quarries.
+     *
+     * @param schemaFrom is generated schema of source database
+     */
     public void generateMigrationSQL(Schema<Table> schemaFrom) {
 
         schemaFrom
@@ -77,7 +91,6 @@ public class DataMigrator<T> {
 
                                             }
                                     );
-
 
                         }
                 );
